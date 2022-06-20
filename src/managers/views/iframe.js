@@ -18,7 +18,10 @@ class IframeView {
 			method: undefined,
 			forceRight: false,
 			allowScriptedContent: false,
-			allowPopups: false
+			allowPopups: false,
+			allow: undefined,
+			allowPresentation: false,
+			allowFullScreen: false,
 		}, options || {});
 
 		this.id = "epubjs-view-" + uuid();
@@ -48,7 +51,6 @@ class IframeView {
 		this.highlights = {};
 		this.underlines = {};
 		this.marks = {};
-
 	}
 
 	container(axis) {
@@ -97,6 +99,18 @@ class IframeView {
 		}
 		if (this.settings.allowPopups) {
 			this.iframe.sandbox += " allow-popups";
+		}
+
+		if (this.settings.allowPresentation) {
+			this.iframe.sandbox += " allow-presentation";
+		}
+
+		if (this.settings.allowFullScreen) {
+			this.iframe.allowfullscreen = "";
+		}
+
+		if (this.settings.allow) {
+			this.iframe.allow = this.settings.allow;
 		}
 		
 		this.iframe.setAttribute("enable-annotation", "true");

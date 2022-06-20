@@ -39,6 +39,9 @@ import ContinuousViewManager from "./managers/continuous/index";
  * @param {string} [options.defaultDirection='ltr'] default text direction
  * @param {boolean} [options.allowScriptedContent=false] enable running scripts in content
  * @param {boolean} [options.allowPopups=false] enable opening popup in content
+ * @param {string} [options.allow=undefined] enable feature policies in the iframe
+ * @param {boolean}	[options.allowPresentation=false] enable opnening a presentation
+ * @param {boolean}	[options.allowFullScreen=false]
  */
 class Rendition {
 	constructor(book, options) {
@@ -59,7 +62,10 @@ class Rendition {
 			snap: false,
 			defaultDirection: "ltr",
 			allowScriptedContent: false,
-			allowPopups: false
+			allowPopups: false,
+			allow: undefined,
+			allowPresentation: false,
+			allowFullScreen: false,
 		});
 
 		extend(this.settings, options);
