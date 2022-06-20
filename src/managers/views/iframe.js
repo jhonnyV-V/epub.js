@@ -75,7 +75,7 @@ class IframeView {
 	}
 
 	create() {
-
+		console.log("iframe settings", this.settings);
 		if(this.iframe) {
 			return this.iframe;
 		}
