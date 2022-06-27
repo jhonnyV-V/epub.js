@@ -9,7 +9,6 @@ import { EVENTS } from "../../utils/constants";
 
 class DefaultViewManager {
 	constructor(options) {
-
 		this.name = "default";
 		this.optsSettings = options.settings;
 		this.View = options.view;
@@ -28,7 +27,10 @@ class DefaultViewManager {
 			ignoreClass: "",
 			fullsize: undefined,
 			allowScriptedContent: false,
-			allowPopups: false
+			allowPopups: false,
+			allow: undefined,
+			allowPresentation: false,
+			allowFullScreen: false
 		});
 
 		extend(this.settings, options.settings || {});
@@ -43,7 +45,10 @@ class DefaultViewManager {
 			height: 0,
 			forceEvenPages: true,
 			allowScriptedContent: this.settings.allowScriptedContent,
-			allowPopups: this.settings.allowPopups
+			allowPopups: this.settings.allowPopups,
+			allow: this.settings.allow,
+			allowPresentation: this.settings.allowPresentation,
+			allowFullScreen: this.settings.allowFullScreen
 		};
 
 		this.rendered = false;

@@ -106,7 +106,7 @@ class IframeView {
 		}
 
 		if (this.settings.allowFullScreen) {
-			this.iframe.allowfullscreen = "";
+			this.iframe.allowfullscreen = "true";
 		}
 
 		if (this.settings.allow) {

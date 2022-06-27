@@ -5,6 +5,7 @@ import Contents from "./contents";
 import Layout from "./layout";
 import ePub from "./epub";
 import IframeView from "./managers/views/iframe";
+import DefaultViewManager from "./managers/default/index";
 
 export default ePub;
 export {
@@ -13,5 +14,6 @@ export {
 	Rendition,
 	Contents,
 	Layout,
-	IframeView
+	IframeView,
+	DefaultViewManager
 };
